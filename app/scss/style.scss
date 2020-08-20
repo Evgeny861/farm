@@ -115,6 +115,25 @@ body {
     color: #FFFFFF;
     margin: auto;
 }
+.header-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 750px;
+
+    p {
+        font-size: 20px;
+        line-height: 23px;
+        margin: 0;
+        margin-bottom: 9px;
+    }
+    hr {
+        transform: rotate(90deg);
+        width: 80px;
+        height: 2px;
+        background: #fff;
+    }
+}
 .phone {
     display: flex;
     align-items: center;
@@ -141,7 +160,6 @@ body {
     &:hover {
         color: #6325ff;
     }
-
 }
 
 
