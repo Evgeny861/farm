@@ -4,8 +4,9 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 .header {
-    background: #A4DAA3;
+    background: #48BB6A;
 }
+
 .top-header {
     max-width: 90%;
     margin: auto;
@@ -13,6 +14,9 @@ body {
     justify-content: space-between;
     height: 110px;
     align-items: center;
+    color: #fff;
+
+
 }
 .sliders {
     background: linear-gradient(180deg, #A4DAA3 0%, rgba(161, 249, 243, 0.58) 100%);
@@ -114,13 +118,42 @@ body {
 .phone {
     display: flex;
     align-items: center;
+    margin-right: 56px;
+
+    img {
+        margin-right: 26px;
+    }
+
+    p {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 16px;
+        line-height: 19px;
+    }
 }
 .phone a {
-    margin-left: 9px;
     text-decoration: none;
-    color: #000;
+    color: #fff;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+
     &:hover {
         color: #6325ff;
+    }
+
+}
+
+
+.time {
+    display: flex;
+    align-items: center;
+    margin-right: 64px;
+
+    p {
+        margin-left: 26px;
+        font-size: 20px;
+        line-height: 23px;
     }
 }
 .logo {
@@ -128,7 +161,6 @@ body {
     max-height: 75px;
 }
 .right-side {
-    width: 300px;
     display: flex;
     justify-content: space-between;
 }
