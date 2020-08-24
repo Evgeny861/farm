@@ -426,8 +426,14 @@ body {
     line-height: 64px;
     color:#424651;
     font-weight: normal;
-    text-align: end;
-    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px 45px 15px 0;
+
+    svg {
+        margin-right: 15px;
+    }
 }
 .main-exchange {
     display: flex;
@@ -503,12 +509,15 @@ body {
     line-height: 64px;
     color:#000;
     font-weight: normal;
-    padding: 15px;
+    padding: 15px 0 15px 45px;
     align-self: flex-end;
-    background: url(../img/award.png) no-repeat ;
-    background-position: 60% center;
-    background-size: 50px;
     background-color: #D8E0FD;
+    color: #424651;
+    display: flex;
+
+    svg {
+        margin-left: 35px;
+    }
 }
 .dignity-main {
     display: flex;
@@ -516,16 +525,20 @@ body {
 }
 .deal-title {
     max-width: 60%;
-    background: url(../img/deal.png) no-repeat ;
-    background-position: 40% center ;
     background-color: #C6E4F1;
     border-radius: 0px 30px 30px 0px;
     font-size: 55px;
     line-height: 64px;
     color:#424651;
     font-weight: normal;
-    padding: 20px;
-    text-align: end;
+    padding: 15px 45px 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    svg {
+        margin-right: 15px;
+    }
 }
 .main-deal {
     display: flex;
@@ -599,6 +612,7 @@ body {
         margin-left: 20px;
         font-size: 20px;
         line-height: 23px;
+        font-weight: 100;
     }
 }
 
