@@ -186,14 +186,14 @@ body {
     padding: 9px 24px;
     align-items: center;
     align-self: center;
-    border: 1px solid transparent;
-    background: #f000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
-    border-radius: 10px;
+    // border: 1px solid transparent;
+    // background: #f000;
+    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
+    // border-radius: 10px;
     color: #fff;
     &:hover {
         cursor: pointer;
-        background: #F9E9B2;
+        fill: #F6F4AD;
     }
 }
 
@@ -426,7 +426,8 @@ body {
     line-height: 64px;
     color:#424651;
     font-weight: normal;
-    text-align: center;
+    text-align: end;
+    padding: 15px;
 }
 .main-exchange {
     display: flex;
@@ -502,7 +503,7 @@ body {
     line-height: 64px;
     color:#000;
     font-weight: normal;
-    padding-left: 15px;
+    padding: 15px;
     align-self: flex-end;
     background: url(../img/award.png) no-repeat ;
     background-position: 60% center;
@@ -523,7 +524,7 @@ body {
     line-height: 64px;
     color:#424651;
     font-weight: normal;
-    padding-right: 20px;
+    padding: 20px;
     text-align: end;
 }
 .main-deal {
@@ -577,7 +578,15 @@ body {
 
     img {
         width: 40px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        margin-left: 15px;
+    }
+}
+.footer-right {
+    text-align: end;
+
+    .footer-tel {
+        padding-bottom: 8px;
     }
 }
 .footer-left {
@@ -619,6 +628,7 @@ body {
 
     .close-rotate {
         transform: rotate(45deg);
+        cursor: pointer;
     }
 }
 form {
@@ -657,6 +667,7 @@ form {
     padding: 20px 70px;
     margin-top: 20px;
     outline: none;
+    cursor: pointer;
 }
 
 
