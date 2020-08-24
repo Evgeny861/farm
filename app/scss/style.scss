@@ -186,10 +186,6 @@ body {
     padding: 9px 24px;
     align-items: center;
     align-self: center;
-    // border: 1px solid transparent;
-    // background: #f000;
-    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
-    // border-radius: 10px;
     color: #fff;
     &:hover {
         cursor: pointer;
@@ -200,15 +196,22 @@ body {
 .main {
     position: relative;
 
-    .car {
+    .car-main {
         background: #F9E9B2;
         position: absolute;
-        top: 100px;
+        bottom: 80px;
         right: 0;
         padding: 5px 15px;
+        border-radius: 10px;
+
+        &:hover {
+            cursor: pointer;
+            fill: #F6F4AD;
+        }
     }
 }
 .first-section {
+    position: relative;
     .title {
         font-size: 45px;
         line-height: 53px;
@@ -808,4 +811,112 @@ form {
     .dignity-title {
         background-position: 70% center;
     }
+}
+@media (max-width: 1200px) {
+    .logo {
+        max-width: 250px;
+        max-height: 60px;
+    }
+    .header-left {
+        hr {
+            margin: 0;
+        }
+        p {
+            font-size: 13px;
+            line-height: normal;
+        }
+    }
+    .first-slide {
+        h2 {
+            font-size: 25px;
+            line-height: 45px;
+        }
+        background-position: 350px 113px;
+    }
+    .delivery p {
+        font-size: 23px;
+    }
+    .phone p {
+        line-height: 13px;
+        font-size: 15px;
+    }
+    .card-container {
+        flex-basis: 30%;
+    }
+    .center-title {
+        font-size: 40px;
+        line-height: 25px;
+        margin-bottom: 80px;
+    }
+    .second-section .hr-1 {
+        top: 60px;
+    }
+    .production-stages {
+        background-size: 90%;
+        min-height: 1110px;
+        .first-text {
+            top: 460px;
+            left: 0;
+            font-size: 27px;
+        }
+        .second-text {
+            left: 62%;
+            top: 460px;
+            max-width: 240px;
+        }
+        .third-text {
+            right: 320px;
+            top: 660px;
+        }
+        .fourth-text {
+            right: 210px;
+            top: 900px;
+            max-width: 250px;
+        }
+        .fifth-text {
+            left: 80px;
+            top: 900px;
+        }
+
+    }
+    .second-text {
+        left: 62%;
+    }
+    .exchange-title { 
+        font-size: 40px;
+    }
+    .main-exchange {
+        max-width: 100%;
+        margin-left: 90px;
+
+        img {
+            max-width: 380px;
+        }
+    }
+    .dignity-title {
+        font-size: 40px;
+    }
+    .dignity-main {
+        flex-wrap: wrap;
+        
+        img {
+            margin-bottom: 40px;
+        }
+    }
+    .deal-title {
+        font-size: 40px;
+    }
+    .main-deal img {
+        max-width: 380px;
+    }
+    .main-deal p {
+        line-height: 40px;
+    }
+    .footer img {
+        width: 30px;
+    }
+}
+@media (max-width: 995px) {
+
+
 }
