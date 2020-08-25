@@ -1,3 +1,6 @@
+@import '../../node_modules/normalize.css/normalize';
+
+
 body {
     padding: 0;
     margin: 0;
@@ -6,7 +9,6 @@ body {
 .header {
     background: #99D6B9;
 }
-
 .top-header {
     max-width: 90%;
     margin: auto;
@@ -16,8 +18,11 @@ body {
     align-items: center;
     color: #fff;
 
-
 }
+.swiper-pagination {
+    top: 530px;
+}
+
 .sliders {
     background: linear-gradient(180deg, #99D6B9 0%, rgba(161, 249, 243, 0.58) 100%);
 }
@@ -38,34 +43,61 @@ body {
     font-style: normal;
     font-weight: normal;
 }
-.slider-dots {
-    margin: 0;
-    background-color: #fff;
-    display: flex;
-    list-style: none;
-    justify-content: center;
-
-    li {
-        margin-right: 15px;
-
-        button {
-            width: 80px;
-            height: 8px;
-            border-radius: 7px;
-            border: 1px solid #74f6f0;
-            background-color: #fff;
-            outline: none;
-            cursor: pointer;
-        }
-    }
-
-    .slick-active {
-        button {
-            background-color: #74f6f0;
-        }
-    }
+.projects-bullet {
+    width: 80px;
+    height: 10px;
+    border: 3px solid #C0FED8;
+    border-radius: 15px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 44px;
+    cursor: pointer;
+    outline: none;
+}
+.projects-bullet-active {
+    background: #C0FED8;
 }
 
+.button-prev {
+    background-image: url(../img/next.svg);
+    position: absolute;
+    top: 30%;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 20px; 
+    outline: none;
+
+    &:active {
+        background-color: #aea2a2;
+        border-radius: 50%;
+    }
+}
+.button-next {
+    background-image: url(../img/next.svg);
+    transform: rotate(180deg);
+    position: absolute;
+    top: 30%;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+    right: 10px;
+    left: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    &:active {
+        background-color: #aea2a2;
+        border-radius: 50%;
+    }
+}
 .delivery {
     display: flex;
     align-items: flex-end;
@@ -92,29 +124,42 @@ body {
 }
 .slide {
     display: none;
-    height: 547px;
 }
 .active {
     display: flex;
 }
+.third-slider {
+    height: 547px;
+    background-image: url(../img/3slide.png);
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.second-slider, .third-slider  {
+    .header-title{
+        text-shadow: 5px 5px 2px black, 0 0 2px #f20000;
+        padding-top: 100px;
+        font-family: Comfortaa;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 55px;
+        line-height: 85px;
+        text-align: center;
+        color: #FFFFFF;
+        margin: auto;
+    }
+}
 .second-slider {
+    text-align: center;
     background-image: url(../img/green.png);
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
+    height: 547px;
 }
-.second-slider .header-title {
-    font-family: Comfortaa;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 55px;
-    line-height: 85px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #FFFFFF;
-    margin: auto;
-}
+
+
 .header-left {
     display: flex;
     align-items: center;
@@ -139,7 +184,7 @@ body {
     align-items: center;
     margin-right: 56px;
 
-    img {
+    svg {
         margin-right: 26px;
     }
 
@@ -177,6 +222,9 @@ body {
 .logo {
     max-width: 350px;
     max-height: 75px;
+    &:hover {
+        fill: #068747;
+    }
 }
 .right-side {
     display: flex;
@@ -192,9 +240,9 @@ body {
         fill: #F6F4AD;
     }
 }
-
 .main {
     position: relative;
+    margin-top: 60px;
 
     .car-main {
         background: #F9E9B2;
@@ -422,6 +470,7 @@ body {
     }
 }
 .exchange-title {
+    box-shadow: 0px 7px 15px rgba(0,0,0,0.33);
     max-width: 60%;
     background: #C6E4F1;
     border-radius: 0px 30px 30px 0px;
@@ -462,23 +511,6 @@ body {
         margin-top: -15px;
         position: relative;
         padding-top: 10px;
-    }
-}
-.return-title {
-    position: relative;
-    z-index: 2;
-    margin: 0;
-    font-size: 30px;
-    line-height: 41px;
-    background: #CCE3F3;
-    border-radius: 10px 10px 20px 20px;
-    padding-left: 15px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-
-    svg {
-        margin-left: 90px;
     }
 }
 .dignity {
@@ -527,6 +559,7 @@ body {
     justify-content: space-around;
 }
 .deal-title {
+    box-shadow: 0px 7px 15px rgba(0,0,0,0.33);
     max-width: 60%;
     background-color: #C6E4F1;
     border-radius: 0px 30px 30px 0px;
@@ -917,6 +950,91 @@ form {
     }
 }
 @media (max-width: 995px) {
-
+    .header-left hr {
+        display: none;
+    }
+    .header-left p {
+        display: none;
+    }
+    .slide_left-part {
+        margin-left: 6%;
+    }
+    .delivery {
+        margin-left: 300px;
+    }
+    .work-time {
+        font-size: 30px;
+    }
+    .third-slider, .second-slider {
+        max-height: 463px;
+    }
+    .first-slide {
+        background-position: 280px 80px;
+        background-size: 600px;
+    }
+    .main .car-main {
+        width: 32px;
+    }
+    .center-title {
+        font-size: 35px;
+        line-height: 18px;
+    }
+    .production-stages {
+        background-size: 90%;
+        min-height: 950px;
+        .first-text {
+            top: 410px;
+            max-width: 310px;
+            font-size: 20px;
+        }
+        .second-text {
+            font-size: 20px;
+            top: 410px;
+            max-width: 200px;
+        }
+        .third-text {
+            right: 240px;
+            top: 560px;
+            font-size: 20px;
+            max-width: 215px;
+        }
+        .fourth-text {
+            right: 210px;
+            top: 770px;
+            max-width: 180px;
+            font-size: 20px;
+        }
+        .fifth-text {
+            left: 50px;
+            top: 780px;
+            font-size: 20px;
+        }
+    }
+    .main-exchange {
+        margin-left: 40px;
+    }
+    .right-exchange p {
+        max-width: 400px;
+    }
+    .main-deal {
+        margin-left: 40px;
+    }
+    .main-deal p {
+        line-height: 35px;
+        font-size: 27px;
+        margin: 0;
+    }
+    .deal-all .deal-contacts h4 {
+        font-size: 22px;
+    }
+    .footer {
+        margin-top: 70px;
+    }
+    .footer-left p {
+        font-size: 18px;
+    }
+    .footer-left {
+        margin-left: 0; 
+    }
 
 }
