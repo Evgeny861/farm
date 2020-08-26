@@ -152,11 +152,18 @@ body {
 }
 .second-slider {
     text-align: center;
-    background-image: url(../img/green.png);
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 547px;
+
+    ymaps {
+        margin: auto;
+    }
+    .header-title {
+        padding: 0;
+        text-shadow: none;
+    }
 }
 
 
