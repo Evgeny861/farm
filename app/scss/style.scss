@@ -254,7 +254,7 @@ body {
 
         &:hover {
             cursor: pointer;
-            fill: #F6F4AD;
+            fill: #000;
         }
     }
 }
@@ -516,6 +516,10 @@ body {
 .dignity {
     display: flex;
     flex-direction: column;
+
+    .dignity-swiper {
+        display: none;
+    }
 
     .wrapper {
         width: 90%;
@@ -1037,4 +1041,183 @@ form {
         margin-left: 0; 
     }
 
+}
+@media (max-width: 770px) {
+    .header {
+        .button-next, .button-prev {
+            display: none;
+        }
+    }
+    .logo {
+        max-width: 230px;
+    }
+    .time {
+        margin-right: 20px;
+        svg {
+            width: 30px;
+        }
+        p {
+            margin-left: 15px;
+            font-size: 18px;
+            line-height: 20px;
+        }
+    }
+    .phone {
+        margin-right: 0px;
+
+        svg {
+            margin-right: 20px;
+            width: 35px;
+        }
+
+        a {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    .delivery {
+        margin-left: 125px;
+    }
+    .first-slide {
+        background-position: 260px 80px;
+        background-size: 500px;
+    }
+    .second-slider .header-title, .third-slider .header-title {
+        font-size: 45px;
+    }
+    .projects-bullet {
+        margin-top: 30px;
+    }
+    .card-container {
+        flex-basis: 45%;
+    }
+    .main .car-main {
+        padding: 2px 10px;
+    }
+    .center-title {
+        font-size: 28px;
+        line-height: 0px;
+    }
+    .second-section .hr-1 {
+        top: 46px;
+    }
+    .production-stages {
+        background-size: 90%;
+        min-height: 750px;
+        .first-text {
+            top: 360px;
+            max-width: 250px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+        .second-text {
+            font-size: 18px;
+            top: 300px;
+            max-width: 130px;
+            line-height: 30px;
+        }
+        .third-text {
+            right: 184px;
+            top: 460px;
+            font-size: 18px;
+            max-width: 180px;
+            line-height: 30px;
+        }
+        .fourth-text {
+            right: 128px;
+            top: 625px;
+            max-width: 162px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+        .fifth-text {
+            left: 30px;
+            top: 620px;
+            font-size: 18px;
+            max-width: 160px;
+            line-height: 30px;
+        }
+    }
+    .exchange-title {
+        font-size: 25px;
+        padding: 10px 45px 10px 0;
+        svg {
+            width: 50px;
+        }
+    }
+    .main-exchange img {
+        max-width: 320px;
+    }
+    .right-exchange {
+        margin-left: 30px;
+
+        p {
+            max-width: 290px;
+        }
+    }
+    .dignity-title {
+        font-size: 25px;
+        padding: 10px 0 10px 45px;
+        svg {
+            width: 50px;
+        }
+    }
+    .dignity {
+        .dignity-main {
+            display: none;
+        }
+        .dignity-swiper {
+            display: block;
+
+            img {
+                display: flex;
+                margin: auto;
+            }
+
+            .button-next, .button-prev {
+                top: 45%;
+            }
+        }
+        .swiper-pagination {
+            display: flex;
+            justify-content: center;
+        }
+
+        hr {
+            margin-top: 40px;      
+        }
+    }
+    .deal-title {
+        font-size: 25px;
+        padding: 10px 45px 10px 0;
+        svg {
+            width: 50px;
+        }
+    }
+    .main-deal {
+        img {
+            max-width: 320px;
+            max-height: 295px;
+        }
+
+        p {
+            line-height: 25px;
+            font-size: 20px;
+            margin: 0;
+        }
+        .deal-all {
+            flex-wrap: wrap;
+
+            .deal-contacts {
+                flex-basis: 57%;
+                h4 {
+                    margin: 15px 0 15px 0;
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+    .footer-left p {
+        font-size: 16px;
+    }
 }
