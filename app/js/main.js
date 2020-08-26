@@ -14,3 +14,5 @@ var mySwiper = new Swiper('.swiper-container', {
     speed: 700,
     spaceBetween: 100
 });
+
+alert(screen.width)
