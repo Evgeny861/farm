@@ -9,6 +9,13 @@ body {
 .header {
     background: #99D6B9;
 }
+.phone {
+    a {
+        svg:hover {
+            fill: #6325ff;;
+        }
+    }
+}
 .top-header {
     max-width: 90%;
     margin: auto;
@@ -455,6 +462,7 @@ body {
         top: 600px;
         left: 60%;
         text-align: left;
+        
     }
     .third-text {
         position: absolute;
@@ -474,6 +482,9 @@ body {
         position: absolute;
         top: 1200px;
         left: 220px;
+    }
+    img {
+        display: none;
     }
 }
 .exchange-title {
@@ -1213,18 +1224,204 @@ form {
             margin: 0;
         }
         .deal-all {
-            flex-wrap: wrap;
-
+            text-align: center;
             .deal-contacts {
-                flex-basis: 57%;
-                h4 {
-                    margin: 15px 0 15px 0;
-                    font-size: 26px;
+                flex-basis: 100%;
+
+                .link {
+                    justify-content: space-around;
                 }
+            }
+            h4 {
+                font-size: 30px;
+            }
+            span {
+                margin-top: 10px;
+                font-size: 22px;
             }
         }
     }
     .footer-left p {
         font-size: 16px;
     }
+}
+@media (max-width: 576px) {
+    .time {
+        display: none;
+    }
+    .phone {
+        .right {
+            display: none;
+        }
+        a {
+            font-size: 20px;
+            line-height: 0;
+        }
+        
+    }
+    .first-slide {
+        background-position: 130px 80px;
+        background-size: 450px;
+
+        h2 {
+            font-size: 20px;
+            line-height: 43px;
+        }
+    }
+    .work-time {
+        padding-top: 180px;
+    }
+    .delivery {
+        margin-left: 25px;
+    }
+    .delivery-car {
+        display: none;
+    }
+    .second-slider {
+        ymaps {
+            max-width: 500px;
+            max-height: 280px;
+        }
+    }
+    .cards {
+        max-width: 95%;
+    }
+    .card-container {
+        flex-basis: 48%;
+    }
+    .main {
+        .car-main {
+            padding: 5px 80px;
+            bottom: 20px;
+            right: 190px;
+        }
+    }
+    .second-section .hr-1 {
+        top: 40px;
+    }
+    .center-title {
+        font-size: 16px;
+        padding: 45px;
+        margin-bottom: 40px;
+    }
+    .production-stages {
+        background-image: none;
+        min-height: 750px;
+        display: flex;
+        flex-wrap: wrap;
+        img {
+            display: block;
+            max-width: 230px;
+            margin: auto;
+        }
+        p{
+            margin: 0;
+        }
+        .first-text {
+            position: inherit;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 25px;
+            max-width: 100%;
+            flex-basis: 50%;
+
+        }
+        .second-text {
+            position: inherit;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 25px;
+            max-width: 100%;
+            flex-basis: 50%;
+
+        }
+        .third-text {
+            position: inherit;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 25px;
+            max-width: 100%;
+            flex-basis: 50%;
+
+        }
+        .fourth-text {
+            position: inherit;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 25px;
+            max-width: 100%;
+            flex-basis: 50%;
+
+        }
+        .fifth-text {
+            position: inherit;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 25px;
+            max-width: 100%;
+            flex-basis: 100%;
+
+        }
+    }
+    .exchange-title {
+        font-size: 20px;
+    }
+    .main-exchange {
+        flex-direction: column;
+        align-items: center;
+        img {
+            max-width: 220px;
+            margin-top: 15px;
+        }
+    }
+    .right-exchange {
+        margin: 0;
+        p {
+            max-width: 90%;
+            margin: auto;
+            margin-top: 20px;
+        }
+    } 
+    .dignity-title {
+        font-size: 20px;
+    }
+    .button-prev {
+        left: 0;
+    }
+    .button-next {
+        right: 0;
+    }
+    .dignity {
+        hr {
+            width: 80%;
+        }
+    } 
+    .dignity span {
+        font-size: 40px;
+        line-height: 45px;
+    }
+    .main-deal {
+        flex-direction: column;
+        align-items: center;
+        img {
+            max-width: 220px;
+            max-height: 195px;
+        }
+    } 
+    .deal-all {
+        flex-wrap: wrap;
+
+        .deal-contacts {
+            flex-basis: 57%;
+            // h4 {
+            //     margin: 15px 0 15px 0;
+            //     font-size: 26px;
+            // }
+        }
+    }
+    .footer-right, .footer-center {
+        display: none;
+    }
+    
+
 }
