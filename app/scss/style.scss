@@ -1480,6 +1480,12 @@ form {
             width: 150px;
         }
     }
+    .main-deal, .main-exchange {
+        margin: 0;
+        p {
+            text-align: center;
+        }
+    }
     .exchange-title, .dignity-title, .deal-title {
         font-size: 14px;
         margin-bottom: 40px;
@@ -1512,12 +1518,6 @@ form {
     .main {
         .car-main {
             right: 95px;
-        }
-    }
-    .main-deal, .main-exchange {
-        margin: 0;
-        p {
-            text-align: center;
         }
     }
     .exchange-title, .deal-title {
