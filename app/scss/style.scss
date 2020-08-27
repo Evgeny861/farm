@@ -1418,6 +1418,125 @@ form {
     .footer-right, .footer-center {
         display: none;
     }
-    
-
 }
+@media (max-width: 414px) {
+    .car {
+        padding: 0;
+    }
+    .first-slide {
+        background-position: 70px 110px;
+        background-size: 370px;
+    }
+    .work-time {
+        padding-top: 130px;
+        font-size: 23px;
+        line-height: 30px;
+    }
+    .clock {
+        width: 50px;
+    }
+    .second-slider {
+        .header-title {
+            line-height: 60px;
+            font-size: 30px;
+        }
+        ymaps {
+            max-width: 380px;
+            max-height: 230px;
+        }
+    }
+    .third-slider {
+        .header-title {
+            font-size: 35px;
+        }
+    }
+    .third-slider, .second-slider {
+        max-height: 360px;
+    }
+    .delivery {
+        display: none;
+    }
+    .cards {
+        max-width: 75%;
+    }
+    .card-container {
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .card-container:last-child {
+        margin-bottom: 80px;
+    }
+    .main {
+        .car-main {
+            right: 110px;
+        }
+    }
+    .center-title {
+        padding: 45px 25px 45px;
+        border-radius: 40px;
+    }
+    .production-stages {
+        img {
+            width: 150px;
+        }
+    }
+    .exchange-title, .dignity-title, .deal-title {
+        font-size: 14px;
+        margin-bottom: 40px;
+        svg {
+            width: 100px;
+            width: 40px;
+        }
+    }
+    .exchange-title, .deal-title {
+        padding: 6px 30px 6px ;
+    }
+    .dignity-title {
+        padding: 6px 30px 6px ;
+    }
+    .dignity {
+        .dignity-swiper {
+            .button-next, .button-prev {
+                display: none;
+            }
+        }
+        span {
+            font-size: 35px;
+        }
+    }
+}
+@media (max-width: 393px) {
+    .first-slide {
+        background-position: 40px 110px;
+    }
+    .main {
+        .car-main {
+            right: 95px;
+        }
+    }
+    .main-deal, .main-exchange {
+        margin: 0;
+        p {
+            text-align: center;
+        }
+    }
+    .exchange-title, .deal-title {
+        padding: 6px 30px 6px ;
+    }
+}
+@media (max-width: 375px) {
+    .logo {
+        max-width: 210px;
+    }
+    .second-slider {
+        .header-title {
+            line-height: 60px;
+            font-size: 30px;
+        }
+        ymaps {
+            max-width: 340px;
+            max-height: 230px;
+        }
+    }
+}
+
