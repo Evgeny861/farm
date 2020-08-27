@@ -724,6 +724,7 @@ form {
         line-height: 33px;
         font-weight: normal;
         margin: 0;
+        color: #068747;
     }
     tbody {
         display: flex;
@@ -746,13 +747,13 @@ form {
     text-align: end;
 }
 #calc-price {
-    border: 3px solid #000000;
+    border: 3px solid #57c75f;
     border-radius: 20px;
     height: 40px;
     text-align: center;
 }
 .btn-send {
-    border: 3px solid #000000;
+    border: 3px solid #57c75f;
     border-radius: 20px;
     padding: 20px 70px;
     margin-top: 20px;

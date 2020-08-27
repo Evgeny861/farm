@@ -71,7 +71,7 @@ for (let card of cards) {
             } else {
                 return card.querySelector('.price').value;
             }
-    }   
+        }   
 
         const tbody = document.querySelector('tbody');
     
@@ -97,8 +97,7 @@ for (let card of cards) {
                     culcArr.push(input.value)
 
                     const result = culcArr.reduce((sum, current) => {
-                        console.log(sum, current);
-                        return sum * current;
+                        return +sum + +current;
                     });
 
                     document.getElementById('calc-price').value = result;
@@ -108,7 +107,7 @@ for (let card of cards) {
         };
 
         if (+card.querySelector('.calc').value !== 0) {
-            tbody.append(tr);
+            tbody.appendChild(tr);
             globalCulcPrice();
         }
     
@@ -122,6 +121,8 @@ for (let card of cards) {
 
         if (e.target === document.querySelector('.overlay') || e.target === document.querySelector('.close-rotate')) {
             document.getElementById('callback_form').style.display = 'none';
+        } else if (e.target.closest('.car-main') || e.target.closest('.car')) {
+            document.getElementById('callback_form').style.display = 'block';
         } else if (e.target.closest('.minus') &&  card.querySelector('.calc').value > 0 && e.target.parentNode.closest('.card') ) {
             if (card === e.target.parentNode.closest('.card')) {
                 card.querySelector('.calc').value = +card.querySelector('.calc').value - 1;
@@ -130,7 +131,23 @@ for (let card of cards) {
             if (card === e.target.parentNode.closest('.card')) {
                 card.querySelector('.calc').value = +card.querySelector('.calc').value + 1;
             }
+        } else if (e.target.parentNode.closest('.card')) {
+            if (card === e.target.parentNode.closest('.card')) {
+                document.querySelector('.form-content').addEventListener(('click'), (e) => {
+                    for (let btn of document.querySelectorAll('.delite-img')) {
+                        if (e.target === btn) {
+                            btn.parentElement.remove();
+                            document.getElementById('calc-price').value = +document.getElementById('calc-price').value - btn.parentElement.querySelectorAll('input')[1].value;
+                        }
+                    }   
+                })
+            }
         }
+
+        
+
+
+        
     });
 
 
@@ -140,11 +157,11 @@ for (let card of cards) {
 
     button.addEventListener('click', (e) => {
         document.getElementById('callback_form').style.display = 'block';
-        console.log("Кнопка",button);
-        console.log("id card ",card.id);
-        console.log("Название",card.querySelector('.card-title').textContent);
-        console.log('Цена',card.querySelector('.price').value);
-        console.log('Количество', card.querySelector('.calc').value);
+        // console.log("Кнопка",button);
+        // console.log("id card ",card.id);
+        // console.log("Название",card.querySelector('.card-title').textContent);
+        // console.log('Цена',card.querySelector('.price').value);
+        // console.log('Количество', card.querySelector('.calc').value);
 
         addProduct();
     })
