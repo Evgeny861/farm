@@ -322,6 +322,8 @@ body {
     line-height: 23px;
     text-align: center;
     color: #575757;
+    max-width: 70%;
+    margin-top: 5px;
 }
 .card-text {
     margin: auto;
@@ -334,14 +336,14 @@ body {
     margin-bottom: 15px;
 }
 
-.number-card {
+.price-card {
     background: url(../img/picture.png) top center no-repeat;
     display: inline-block;
     width: 241px;
     height: 221px;
     position: relative;
 }
-.number-card input {
+.price-card input {
     width: 99px;
     height: 35px;
     background: #F6F4AD;
@@ -351,6 +353,7 @@ body {
     position: absolute;
     top: 168px;
     left: 142px;
+    text-align: end;
 
     p {
         margin: 8px;
@@ -692,13 +695,12 @@ body {
         top: 20vh;
         right: 0;
         z-index: 1200;
-        height: 355px;
         background: #E1F0F1;
         border-radius: 40px;
         width: 700px;
     }
 
-    .close-rotate {
+    .close-rotate, .delite-img {
         transform: rotate(45deg);
         cursor: pointer;
     }
@@ -723,6 +725,21 @@ form {
         font-weight: normal;
         margin: 0;
     }
+    tbody {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        tr {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            margin-top: 10px;
+            align-items: center;
+        }
+        td, th {
+            flex-basis: 30%;
+        }
+    }
 }
 .close-form {
     display: block;
@@ -732,6 +749,7 @@ form {
     border: 3px solid #000000;
     border-radius: 20px;
     height: 40px;
+    text-align: center;
 }
 .btn-send {
     border: 3px solid #000000;
@@ -1478,12 +1496,6 @@ form {
     .production-stages {
         img {
             width: 150px;
-        }
-    }
-    .main-deal, .main-exchange {
-        margin: 0;
-        p {
-            text-align: center;
         }
     }
     .exchange-title, .dignity-title, .deal-title {
