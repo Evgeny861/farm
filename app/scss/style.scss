@@ -1539,4 +1539,10 @@ form {
         }
     }
 }
+@media (max-width: 375px) {
+    .exchange-title, .dignity-title, .deal-title {
+        font-size: 11px;
+    }
+}
+
 
