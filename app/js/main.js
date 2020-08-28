@@ -1,3 +1,4 @@
+
 new WOW().init();
 
 var mySwiper = new Swiper('.swiper-container', {
@@ -14,45 +15,6 @@ var mySwiper = new Swiper('.swiper-container', {
     speed: 700,
     spaceBetween: 100
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -77,9 +39,9 @@ for (let card of cards) {
     
         const tr = document.createElement('tr');
         tr.innerHTML = `
-                            <th>${card.querySelector('.card-title').textContent}</th>
-                            <td><input type="text" name="quantity" value="${card.querySelector('.calc').value}" readonly id="quantity"></td>
-                            <td><input type="text" name="price" value="${calcPrice()}" readonly id="price"></td>
+                            <th><input type="text" name="productName${Math.floor(Math.random() * Math.floor(123))}" value="${card.querySelector('.card-title').textContent}" readonly id="quantity"></th>
+                            <td><input type="text" name="quantity${Math.floor(Math.random() * Math.floor(123))}" value="${card.querySelector('.calc').value}" readonly id="quantity"></td>
+                            <td><input type="text" name="price${Math.floor(Math.random() * Math.floor(123))}" value="${calcPrice()}" readonly id="price"></td>
                             <svg width="35" height="35" fill="black" class="delite-img">
                             <use xlink:href="app/img/icons.svg#close"></use>
                             </svg>
@@ -93,7 +55,7 @@ for (let card of cards) {
             let culcArr = [];
 
             for (input of inputs) {
-                if (input.name === 'price') {
+                if (input.id === 'price') {
                     culcArr.push(input.value)
 
                     const result = culcArr.reduce((sum, current) => {
@@ -137,7 +99,7 @@ for (let card of cards) {
                     for (let btn of document.querySelectorAll('.delite-img')) {
                         if (e.target === btn) {
                             btn.parentElement.remove();
-                            document.getElementById('calc-price').value = +document.getElementById('calc-price').value - btn.parentElement.querySelectorAll('input')[1].value;
+                            document.getElementById('calc-price').value = +document.getElementById('calc-price').value - btn.parentElement.querySelectorAll('input')[2].value;
                         }
                     }   
                 })
@@ -151,23 +113,99 @@ for (let card of cards) {
     });
 
 
-
-
-
-
     button.addEventListener('click', (e) => {
         document.getElementById('callback_form').style.display = 'block';
-        // console.log("Кнопка",button);
-        // console.log("id card ",card.id);
-        // console.log("Название",card.querySelector('.card-title').textContent);
-        // console.log('Цена',card.querySelector('.price').value);
-        // console.log('Количество', card.querySelector('.calc').value);
-
         addProduct();
+        console.log(document.querySelector('form'));
     })
     
     
 }
+
+
+const sendForm = form => {
+
+    const errorMessage = 'Что то пошло не так...',
+    loadMessage = 'Загрузка...',
+    successMessage = 'Спасибо! Мы скоро с вами свяжемся!';
+    
+
+const statusMessage = document.createElement('div');
+statusMessage.classList.add('status-message');
+statusMessage.style.cssText = 'font-size: 2rem;';
+const deliteRow = () => {
+    let table = document.querySelector('table'),
+    row = table.querySelectorAll('tr');
+    for (let i = 0; i <= row.length; i++) {
+        console.log(row.length);
+        if (i > 1 ) {
+            console.log(row[i], 'строки больше 2');
+            row[i].remove();
+        }
+    }
+}
+
+
+
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+
+        form.appendChild(statusMessage);
+        const formData = new FormData(form);
+        const body = {};
+        formData.forEach((val, key) => {
+            body[key] = val;
+        });
+        if (!statusMessage.textContent) {
+            statusMessage.textContent = loadMessage;
+        } else {
+            statusMessage.textContent = '';
+            statusMessage.textContent = loadMessage;
+        }
+        const input = form.querySelectorAll('input');
+        for (let i = 0; i < input.length; i++) {
+            if (input[i].value !== '') {
+                input[i].value = '';
+            }
+        }
+        
+        const deliteMessage = () => {
+            if (statusMessage) {
+                form.removeChild(statusMessage);
+            }
+        };
+        setTimeout(deliteMessage, 5000);
+
+        const postData = body =>
+            fetch('./server.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            });
+    
+    
+        postData(body)
+            .then(response => {
+                if (response.status !== 200) {
+                    throw new Error('status network not 200');
+                }
+                deliteRow();
+                console.log(response);
+                statusMessage.textContent = successMessage;
+                
+            })
+            .catch(error => {
+                statusMessage.textContent = errorMessage;
+                console.log(error);
+            });
+    
+    });
+}
+
+sendForm(document.querySelector('form'))
+
 
 
 
