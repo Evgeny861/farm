@@ -1600,6 +1600,18 @@ form {
     .exchange-title, .dignity-title, .deal-title {
         font-size: 11px;
     }
+    #calc-price {
+        height: 30px;
+    }
+    form {
+        input {
+            outline: none;
+            width: 88%;
+        }
+        h4 {
+            line-height: 22px;
+        }
+    }
 }
 
 

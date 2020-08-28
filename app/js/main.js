@@ -116,7 +116,6 @@ for (let card of cards) {
     button.addEventListener('click', (e) => {
         document.getElementById('callback_form').style.display = 'block';
         addProduct();
-        console.log(document.querySelector('form'));
     })
     
     
@@ -137,9 +136,7 @@ const deliteRow = () => {
     let table = document.querySelector('table'),
     row = table.querySelectorAll('tr');
     for (let i = 0; i <= row.length; i++) {
-        console.log(row.length);
-        if (i > 1 ) {
-            console.log(row[i], 'строки больше 2');
+        if (i > 1 && row[i]) {
             row[i].remove();
         }
     }
@@ -192,13 +189,13 @@ const deliteRow = () => {
                     throw new Error('status network not 200');
                 }
                 deliteRow();
-                console.log(response);
                 statusMessage.textContent = successMessage;
                 
             })
             .catch(error => {
-                statusMessage.textContent = errorMessage;
                 console.log(error);
+                deliteRow();
+                statusMessage.textContent = errorMessage;
             });
     
     });
