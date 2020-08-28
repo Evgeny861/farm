@@ -698,6 +698,7 @@ body {
         background: #E1F0F1;
         border-radius: 40px;
         width: 700px;
+        max-width: 90%;
     }
 
     .close-rotate, .delite-img {
@@ -706,10 +707,23 @@ body {
     }
 }
 form {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
+    .logo-caption {
+        display: none;
+    }
+    caption {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    table {
+        display: block;
+    }
 
     input {
         outline: none;
+        width: 100%;
     }
 
     .after-form {
@@ -717,6 +731,10 @@ form {
         justify-content: space-between;
         align-items: center;
         margin-top: 30px;
+
+        svg, div, button {
+            flex-basis: 30%;
+        }
     }
 
     h4 {
@@ -737,8 +755,11 @@ form {
             margin-top: 10px;
             align-items: center;
         }
-        td, th {
+        th, td {
             flex-basis: 30%;
+            input {
+                width: 90%;
+            }
         }
     }
 }
@@ -1437,6 +1458,29 @@ form {
     .footer-right, .footer-center {
         display: none;
     }
+    form {
+        .logo-caption {
+            display: block;
+            width: 200px;
+            height: auto;
+        }
+        tbody {
+            th input,td input{
+                flex-basis: 20%;
+            }
+        }
+
+        h4 {
+            font-size: 20px;
+            text-align: center;
+        }
+        .after-form {
+            svg {
+                display: none;
+            }
+        }
+    }   
+
 }
 @media (max-width: 414px) {
     .car {
