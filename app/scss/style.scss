@@ -258,11 +258,12 @@ body {
     position: relative;
     margin-top: 60px;
 
+    .wrapper-bascket {
+        bottom: 80px;
+        right: 5px;
+    }
     .car-main {
         background: #F9E9B2;
-        position: absolute;
-        bottom: 80px;
-        right: 0;
         padding: 5px 15px;
         border-radius: 10px;
 
@@ -270,6 +271,15 @@ body {
             cursor: pointer;
             fill: #000;
         }
+    }
+    .right-cart-number{
+        position: absolute; 
+        width: 20px; 
+        height: 20px; 
+        background-color: #ff7500;
+        text-align: center;
+        border-radius: 50%;
+        padding: 1px 0px 0 0;
     }
 }
 .first-section {
@@ -337,11 +347,15 @@ body {
 }
 
 .price-card {
-    background: url(../img/picture.png) top center no-repeat;
     display: inline-block;
     width: 241px;
     height: 221px;
     position: relative;
+    img {
+        width: 241px;
+        height: 221px;
+        border-radius: 15px;
+    }
 }
 .price-card input {
     width: 99px;
@@ -353,7 +367,7 @@ body {
     position: absolute;
     top: 168px;
     left: 142px;
-    text-align: end;
+    text-align: center;
 
     p {
         margin: 8px;
@@ -366,6 +380,8 @@ body {
     box-sizing: border-box;
     border-radius: 10px;
     margin: 0 10px;
+    outline: none;
+    text-align: center;
 }
 .bottom-input {
     display: flex;
@@ -761,6 +777,7 @@ form {
             flex-basis: 30%;
             input {
                 width: 90%;
+                text-align: center;
             }
         }
     }
@@ -1332,10 +1349,12 @@ form {
         flex-basis: 48%;
     }
     .main {
-        .car-main {
-            padding: 5px 80px;
+        .wrapper-bascket {
             bottom: 20px;
             right: 190px;
+        }
+        .car-main {
+            padding: 5px 80px;
         }
     }
     .second-section .hr-1 {
@@ -1532,7 +1551,7 @@ form {
         margin-bottom: 80px;
     }
     .main {
-        .car-main {
+        .wrapper-bascket {
             right: 110px;
         }
     }
@@ -1575,7 +1594,7 @@ form {
         background-position: 40px 110px;
     }
     .main {
-        .car-main {
+        .wrapper-bascket {
             right: 95px;
         }
     }

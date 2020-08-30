@@ -39,8 +39,8 @@ for (let card of cards) {
     
         const tr = document.createElement('tr');
         tr.innerHTML = `
-                            <th><input type="text" name="productName${Math.floor(Math.random() * Math.floor(123))}" value="${card.querySelector('.card-title').textContent}" readonly id="quantity"></th>
-                            <td><input type="text" name="quantity${Math.floor(Math.random() * Math.floor(123))}" value="${card.querySelector('.calc').value}" readonly id="quantity"></td>
+                            <th><input type="text" name="productName${Math.floor(Math.random() * Math.floor(123))}" value="${card.querySelector('.card-title').textContent}" readonly ></th>
+                            <td><input type="text" name="quantity${Math.floor(Math.random() * Math.floor(123))}" value="${card.querySelector('.calc').value}" readonly ></td>
                             <td><input type="text" name="price${Math.floor(Math.random() * Math.floor(123))}" value="${calcPrice()}" readonly id="price"></td>
                             <svg width="35" height="35" fill="black" class="delite-img">
                             <use xlink:href="app/img/icons.svg#close"></use>
@@ -68,9 +68,19 @@ for (let card of cards) {
 
         };
 
+
+        const wrapperBascket = document.querySelector('.wrapper-bascket');
+        const number = document.createElement('span');
+        number.classList.add('right-cart-number');
+
         if (+card.querySelector('.calc').value !== 0) {
             tbody.appendChild(tr);
             globalCulcPrice();
+            if (!document.querySelector('.right-cart-number')) {
+                wrapperBascket.prepend(number);
+            } 
+            document.querySelector('.right-cart-number').textContent = document.querySelector('form').querySelectorAll('tr').length - 2;
+
         }
     
     }
@@ -99,7 +109,11 @@ for (let card of cards) {
                     for (let btn of document.querySelectorAll('.delite-img')) {
                         if (e.target === btn) {
                             btn.parentElement.remove();
+                            document.querySelector('.right-cart-number').textContent = document.querySelector('form').querySelectorAll('tr').length - 2;
                             document.getElementById('calc-price').value = +document.getElementById('calc-price').value - btn.parentElement.querySelectorAll('input')[2].value;
+                            if (document.querySelector('.right-cart-number') && document.querySelector('.right-cart-number').textContent === '0') {
+                                document.querySelector('.right-cart-number').remove();                                
+                            }
                         }
                     }   
                 })
@@ -112,11 +126,10 @@ for (let card of cards) {
         
     });
 
-
     button.addEventListener('click', (e) => {
-        document.getElementById('callback_form').style.display = 'block';
         addProduct();
     })
+
     
     
 }
@@ -189,13 +202,21 @@ const deliteRow = () => {
                     throw new Error('status network not 200');
                 }
                 deliteRow();
+                document.querySelector('.right-cart-number').textContent = document.querySelector('form').querySelectorAll('tr').length - 2;
                 statusMessage.textContent = successMessage;
+                if (document.querySelector('.right-cart-number') && document.querySelector('.right-cart-number').textContent === '0') {
+                    document.querySelector('.right-cart-number').remove()             
+                }
                 
             })
             .catch(error => {
                 console.log(error);
                 deliteRow();
+                document.querySelector('.right-cart-number').textContent = document.querySelector('form').querySelectorAll('tr').length - 2;
                 statusMessage.textContent = errorMessage;
+                if (document.querySelector('.right-cart-number') && document.querySelector('.right-cart-number').textContent === '0') {
+                    document.querySelector('.right-cart-number').remove()
+                }
             });
     
     });
@@ -204,5 +225,11 @@ const deliteRow = () => {
 sendForm(document.querySelector('form'))
 
 
-
+window.addEventListener('scroll', function() {
+    if (pageYOffset > 800 && pageYOffset < 2600 && outerWidth > 576) {
+        document.querySelector('.wrapper-bascket').style.position = 'fixed'
+    } else {
+        document.querySelector('.wrapper-bascket').style.position = 'absolute'
+    }
+});
 

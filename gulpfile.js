@@ -4,7 +4,9 @@ let gulp = require('gulp'),
     rename = require('gulp-rename'),
     autoprefixer = require('gulp-autoprefixer'),
     uglify = require('gulp-uglify'),
-    concat = require('gulp-concat')
+    concat = require('gulp-concat'),
+    htmlmin = require('gulp-htmlmin');
+    var autopolyfiller = require('gulp-autopolyfiller');
 
 gulp.task('autoprefixer', function() {
     gulp.src('./app/scss/**/*.scss')
@@ -12,6 +14,17 @@ gulp.task('autoprefixer', function() {
             cascade: false
         }))
         .pipe(gulp.dest('./app/css'))
+});
+
+gulp.task('minify', () => {
+    return gulp.src('./**.html')
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest('dist'));
+});
+gulp.task('autopolyfiller', function () {
+    return gulp.src('./app/js/**.js')
+        .pipe(autopolyfiller('result_polyfill_file.js'))
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('scss', function() {
